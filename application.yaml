@@ -6,9 +6,15 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    repoURL: https://github.com/BandrevuMounika/3-tier-application.git
     targetRevision: HEAD
-    path: guestbook
+    path: yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: guestbook
+    namespace: myapp
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
