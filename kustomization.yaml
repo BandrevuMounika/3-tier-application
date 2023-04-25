@@ -1,0 +1,7 @@
+resources:
+  - backend.yaml
+  - frontend.yaml
+secretGenerator:
+- name: mysql-pass
+  literals:
+  - password=Passw0rd@321
